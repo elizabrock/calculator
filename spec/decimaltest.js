@@ -20,6 +20,30 @@
     });
   });
   describe('Dividing Decimals', function(){
+    describe('.3 / .1 =', function(){
+      it("should be 3", function(){
+        var a = new Decimal('0.3');
+        var b = new Decimal('0.1');
+        var result = a.dividedBy(b);
+        assert.strictEqual(result.toString(), '3');
+      });
+    });
+    describe('22 / 7 =', function(){
+      it("should be 3.14...", function(){
+        var a = new Decimal('22');
+        var b = new Decimal('7');
+        var result = a.dividedBy(b);
+        assert.strictEqual(result.toString(), '3.142857143');
+      });
+    });
+    describe('10 / 3 =', function(){
+      it("should be 3.333...", function(){
+        var a = new Decimal('1');
+        var b = new Decimal('3');
+        var result = a.dividedBy(b);
+        assert.strictEqual(result.toString(), '3.333333333');
+      });
+    });
   });
   describe('Signed decimals', function(){
   });
