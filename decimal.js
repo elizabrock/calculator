@@ -1,12 +1,20 @@
 function Decimal(initialValue){
-  this.value = initialValue;
+  this.value = initialValue * 1;
+  this.mantissa = initialValue.toString().match(/[^.]*\.?(\d*)/)[1].length;
+
+  this.plus = function(addend){
+    var sum = this.value + addend.value;
+    var digits = Math.max(this.mantissa, addend.mantissa);
+    return new Decimal(sum.toFixed(digits));
+  }
+
   this.times = function(multiplicand){
-    var product = (this.value * 1) * (multiplicand.value * 1);
+    var product = this.value * multiplicand.value;
     return new Decimal(product);
   }
   // Option a
   this.toString = function(){
-    return this.value;
+    return this.value.toString();
   }
 }
 

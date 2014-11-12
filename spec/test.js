@@ -153,13 +153,13 @@
     describe('0 1 1 + 1 =', function(){
       it('should be 12', function () {
         type(0, 1, 1, '+', 1, '=');
-        assert.equal(displayoutput(), '12');
+        assert.equal(displayOutput(), '12');
       });
     });
     describe('7 . 8 9 + 1 + 2 =', function(){
       it('should be 10.89', function () {
         type(7, '.', 8, 9, '+', 1, '+', 2, '=');
-        assert.equal(displayoutput(), '10.89');
+        assert.equal(displayOutput(), '10.89');
       });
     });
     xdescribe('7 . 8 9 + 1 = + 2 =', function(){
