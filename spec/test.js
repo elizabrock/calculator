@@ -47,6 +47,27 @@
     });
   });
 
+  describe('Division', function(){
+    describe('.3 / .1 =', function(){
+      it("should be 3", function(){
+        type('.', 3, '/', '.', 1, '=');
+        assert.equal(displayOutput(), '3');
+      });
+    });
+    describe('22 / 7 =', function(){
+      it("should be 3.14...", function(){
+        type(2, 2, '/', 7, '=');
+        assert.equal(displayOutput(), '3.142857143');
+      });
+    });
+    describe('10 / 3 =', function(){
+      it("should be 3.333...", function(){
+        type(1, 0, '/', 3, '=');
+        assert.equal(displayOutput(), '3.333333333');
+      });
+    });
+  });
+
   describe('Multiplying', function(){
     describe('2 * 3 =', function(){
       it('should be 6', function(){
@@ -119,11 +140,26 @@
     });
   });
 
+  describe('Substraction', function(){
+    describe('1.1 - 0.1', function(){
+      it('should be 1.0', function(){
+        type(1, '.', 1, '-', 0, '.', 1, '=');
+        assert.equal(displayOutput(), '1.0');
+      });
+    });
+  });
+
   describe('Adding', function () {
+    describe('0 1 1 + 1 =', function(){
+      it('should be 12', function () {
+        type(0, 1, 1, '+', 1, '=');
+        assert.equal(displayoutput(), '12');
+      });
+    });
     describe('7 . 8 9 + 1 + 2 =', function(){
       it('should be 10.89', function () {
         type(7, '.', 8, 9, '+', 1, '+', 2, '=');
-        assert.equal(displayOutput(), '10.89');
+        assert.equal(displayoutput(), '10.89');
       });
     });
     xdescribe('7 . 8 9 + 1 = + 2 =', function(){

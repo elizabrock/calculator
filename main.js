@@ -6,11 +6,19 @@ var previousResult;
 var nextOperation;
 
 function add(a, b){
-  return ((a * 100000000000000) + (b * 100000000000000))/100000000000000
+  return a + b;
+}
+
+function subtract(a, b){
+  return a - b;
 }
 
 function multiply(a, b){
   return a * b;
+}
+
+function divide(a, b){
+  return a / b;
 }
 
 function currentValue(string){
@@ -19,7 +27,7 @@ function currentValue(string){
 
 function calculate(){
   if(!!nextOperation){
-    previousResult = nextOperation(previousResult, currentValue());
+    previousResult = nextOperation(previousResult, currentValue());//.toPrecision(10);
   } else {
     previousResult = currentValue();
   }
@@ -33,7 +41,9 @@ function press(buttonValue){
       $('#displayoutput').val('');
       break;
     case '-':
-      // handle -
+      calculate();
+      nextOperation = subtract;
+      $('#displayoutput').val('');
       break;
     case '*':
       calculate();
@@ -41,7 +51,9 @@ function press(buttonValue){
       $('#displayoutput').val('');
       break;
     case '/':
-      // handle /
+      calculate();
+      nextOperation = divide;
+      $('#displayoutput').val('');
       break;
     case 'C':
       // handle C
