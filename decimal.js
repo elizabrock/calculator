@@ -17,6 +17,13 @@ function Decimal(initialValue){
     var product = this.value * multiplicand.value;
     return new Decimal(product);
   }
+
+  this.dividedBy = function(divisor){
+    var quotient = this.value / divisor.value;
+    var fixedQuotient = quotient.toFixed(9);
+    return new Decimal(fixedQuotient);
+  }
+
   // Option a
   this.toString = function(){
     return this.value.toString();

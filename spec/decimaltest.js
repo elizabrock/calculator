@@ -38,10 +38,28 @@
     });
     describe('10 / 3 =', function(){
       it("should be 3.333...", function(){
-        var a = new Decimal('1');
+        var a = new Decimal('10');
         var b = new Decimal('3');
         var result = a.dividedBy(b);
         assert.strictEqual(result.toString(), '3.333333333');
+      });
+    });
+    describe('.1 * 3 / 100000 =', function(){
+      it("should be 0.000003", function(){
+        var a = new Decimal(.1);
+        var b = new Decimal(3);
+        var c = new Decimal(100000);
+        var result = a.times(b).dividedBy(c);
+        assert.strictEqual(result.toString(), '0.000003');
+      });
+    });
+    describe('.1 * 3 / 1000000 =', function(){
+      it("should be 3e-7", function(){
+        var a = new Decimal('.1');
+        var b = new Decimal('3');
+        var c = new Decimal('1000000');
+        var result = a.times(b).dividedBy(c);
+        assert.equal(result.toString(), '3e-7');
       });
     });
   });
