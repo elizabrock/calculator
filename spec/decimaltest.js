@@ -162,6 +162,16 @@
         assert.strictEqual(result.toString(), '0');
       });
     });
+
+    describe('9999 * 9999 * 9999 =', function(){
+      it('should be 999970000299999', function(){
+        var a = new Decimal(999999);
+        var b = new Decimal(999999);
+        var c = new Decimal(999999);
+        var result = a.times(b).times(c);
+        assert.strictEqual(result.toString(), 'Error');
+      });
+    });
   });
 
   describe('String representation of Decimal', function(){
