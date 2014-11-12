@@ -2,6 +2,11 @@ function Decimal(initialValue){
   this.value = initialValue * 1;
   this.mantissa = initialValue.toString().match(/[^.]*\.?(\d*)/)[1].length;
 
+  this.minus = function(subtrahend){
+    var difference = this.value - subtrahend.value;
+    return new Decimal(difference);
+  }
+
   this.plus = function(addend){
     var sum = this.value + addend.value;
     var digits = Math.max(this.mantissa, addend.mantissa);

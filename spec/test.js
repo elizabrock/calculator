@@ -140,7 +140,7 @@
     });
   });
 
-  describe('Substraction', function(){
+  describe('Subtraction', function(){
     describe('1.1 - 0.1', function(){
       it('should be 1.0', function(){
         type(1, '.', 1, '-', 0, '.', 1, '=');

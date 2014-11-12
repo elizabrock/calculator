@@ -2,6 +2,22 @@
   'use strict';
 
   describe('Subtracting Decimals', function(){
+    describe('1.1 - 0.1', function(){
+      it('should be 1', function(){
+        var a = new Decimal('1.1');
+        var b = new Decimal('0.1');
+        var result = a.minus(b);
+        assert.strictEqual(result.toString(), '1');
+      });
+    });
+    describe('0.1 - 1.0', function(){
+      it('should be -0.9', function(){
+        var a = new Decimal('0.1');
+        var b = new Decimal('1.0');
+        var result = a.minus(b);
+        assert.strictEqual(result.toString(), '-0.9');
+      });
+    });
   });
   describe('Dividing Decimals', function(){
   });
